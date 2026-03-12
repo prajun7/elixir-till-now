@@ -35,7 +35,7 @@ pid = spawn(fn -> Messenger.listen() end)
 
 # 2. Send an asynchronous message to the process
 # The current process continues immediately (non-blocking).
-send(pid, {:greet, "Manus User"})
+send(pid, {:greet, "Elixir User"})
 
 # 3. Perform a calculation by sending a message and waiting for a response
 # This illustrates the standard "request-response" pattern in Elixir.

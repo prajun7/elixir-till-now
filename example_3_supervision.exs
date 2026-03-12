@@ -30,6 +30,7 @@ defmodule SupervisorMock do
   if it crashes unexpectedly.
   """
   def monitor(worker_id) do
+    Process.flag(:trap_exit, true)
     # Spawn a new worker process
     pid = spawn_link(fn -> Worker.work(worker_id) end)
     Process.register(pid, :"worker_#{worker_id}") # Register the PID to a name
@@ -53,7 +54,7 @@ Process.flag(:trap_exit, true)
 
 # 1. Start the supervisor in a separate process
 IO.puts("--- Supervision and Fault Tolerance Demo ---")
-sup_pid = spawn(fn -> SupervisorMock.monitor(1) end)
+_sup_pid = spawn(fn -> SupervisorMock.monitor(1) end)
 
 # Give the supervisor time to start the worker
 :timer.sleep(100)
