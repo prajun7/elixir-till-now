@@ -281,20 +281,80 @@ elixir example_3_supervision.exs
 
 ## Getting Started
 
-1. **Install Elixir** from [elixir-lang.org](https://elixir-lang.org/install.html)
-2. **Clone this repo** and run the examples:
+### Prerequisites
+
+- macOS with [Homebrew](https://brew.sh/) installed
+
+If you don't have Homebrew, install it first:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### Step 1 — Install Elixir (macOS)
+
+Homebrew automatically installs Erlang/OTP as a dependency:
+
+```bash
+brew install elixir
+```
+
+Verify the installation:
+
+```bash
+elixir --version
+```
+
+You should see output similar to:
+
+```
+Erlang/OTP 26 [erts-14.x] ...
+Elixir 1.x.x (compiled with Erlang/OTP 26)
+```
+
+### Step 2 — Clone and Run the Examples
 
 ```bash
 git clone <repo-url>
 cd elixir-till-now
-elixir example_1_pattern_matching.exs
-elixir example_2_concurrency.exs
-elixir example_3_supervision.exs
 ```
 
-3. Work through the [official Getting Started guide](https://elixir-lang.org/getting-started/introduction.html)
-4. Build a small [Phoenix](https://www.phoenixframework.org/) web application
-5. Join the community — [ElixirForum](https://elixirforum.com/), [Discord](https://discord.gg/elixir), Slack
+Run each example:
+
+```bash
+elixir example_1_pattern_matching.exs   # Pattern matching & recursion
+elixir example_2_concurrency.exs        # Actor model & message passing
+elixir example_3_supervision.exs        # Supervision & fault tolerance
+```
+
+### Step 3 — Try the Interactive Shell (IEx)
+
+Launch the Elixir interactive shell:
+
+```bash
+iex
+```
+
+Try some expressions:
+
+```elixir
+iex> 1 + 1
+2
+iex> "Hello " <> "World"
+"Hello World"
+iex> {x, y} = {1, 2}
+{1, 2}
+iex> Enum.map([1, 2, 3], fn x -> x * 2 end)
+[2, 4, 6]
+```
+
+Press `Ctrl+C` twice to exit.
+
+### Next Steps
+
+- Work through the [official Getting Started guide](https://elixir-lang.org/getting-started/introduction.html)
+- Build a small [Phoenix](https://www.phoenixframework.org/) web application
+- Join the community — [ElixirForum](https://elixirforum.com/), [Discord](https://discord.gg/elixir), Slack
 
 ---
 
